@@ -1,0 +1,127 @@
+@import "reset";
+@import "variables";
+@import "mixins";
+
+
+html, body { height:100%; }
+
+// Typography
+body { font-family: $font-family-body; font-size: $font-size-body }
+
+
+// UI Blocks: Panels
+.panel {
+  &__body { background: $color-background; padding:38px 51px; }
+}
+
+.panel_login {
+  @include desktop {
+    width: 300px;
+    display: flex;
+    align-self: center;
+  }
+}
+
+// Controls: Buttons
+.button { }
+.button__blue { }
+
+
+// Forms: Inputs
+.input {
+  position:relative;
+  margin-bottom:45px;
+
+  &__label {
+    color:#999;
+    font-size:18px;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    left:0px;
+    top:10px;
+    transition:0.2s ease all;
+    -moz-transition:0.2s ease all;
+    -webkit-transition:0.2s ease all;
+  }
+
+  &__field {
+    font-size:$font-size-inputs;
+    padding:10px 10px 10px 0;
+    display:block;
+    width:100%;
+    border:none;
+    border-bottom:1px solid #757575;
+
+    &:focus, &:valid {
+      ~ label    {
+        top:-20px;
+        font-size:14px;
+        color:#5264AE;
+      }
+    }
+
+    &:focus {
+      ~ &__bar:before, ~ &__bar:after { width:50%; }
+      ~ &__highlight { animation:input__animation 0.3s ease; }
+    }
+  }
+
+  &__bar {
+    position:relative; display:block; width:100%;
+
+    &:before, &:after   {
+      content:'';
+      height:3px;
+      width:0;
+      bottom:-1px;
+      position:absolute;
+      background:#5264AE;
+      transition:0.2s ease all;
+    }
+
+    &:before { left:50%; }
+    &:after { right:50%; }
+  }
+
+  &__highlight {
+    position:absolute;
+    height:60%;
+    width:100px;
+    top:25%;
+    left:0;
+    pointer-events:none;
+    opacity:0.5;
+  }
+}
+
+
+// Forms: Login form
+.login-form {
+  &__item-notes {
+  }
+}
+
+
+// Pages: Login
+.page_login {
+  @include desktop {
+    background: url(../images/fullscreen_bg_image.jpg) no-repeat top center fixed;
+    background-size: cover;
+    height: 100%;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+  }
+}
+
+.page__container_login {
+
+}
+
+
+// Helpers: Animations
+@keyframes input__animation {
+  from { background:#5264AE; }
+  to  { width:0; background:transparent; }
+}
