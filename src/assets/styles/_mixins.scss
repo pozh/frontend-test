@@ -1,5 +1,12 @@
 @import "variables";
 
+// target large screens, i.e. desktops
+@mixin smartphone {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
 // target tablets only
 @mixin tablet {
   @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
@@ -9,6 +16,13 @@
 
 // target large screens, i.e. desktops
 @mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+// target both tablets and desktops
+@mixin tablet-up {
   @media (min-width: #{$desktop-width}) {
     @content;
   }
