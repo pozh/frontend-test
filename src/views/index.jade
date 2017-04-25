@@ -13,11 +13,11 @@ html(lang="en")
 
   body.page.page_login
 
-    .panel.panel_login
+    .panel.panel_login: form(action="profile.html", method="get")
       .panel__body
         .panel__text
           h2.panel__caption Login
-          form.form-simple
+          .form-simple
             .form-simple__item
               .input
                 input.input__field#email(type="text", required)
@@ -32,9 +32,9 @@ html(lang="en")
                 span.input__bar
             .form-simple__item.form-simple__item-notes
               | By signing up or clicking continue, I confirm that I have
-              |  read and agree to the #[a(href="") Terms] and #[a(href="") Privacy Policy]
+              |  read and agree to the #[a(href="notimplemented.html") Terms] and #[a(href="notimplemented.html") Privacy Policy]
         .panel__footer
-          input.btn.btn__primary.btn_block(value="LOGIN")
+          input.btn.btn__primary.btn_block(value="LOGIN", type="submit")
 
   script(src="assets/js/vendor.js")
   script(src="assets/js/main.js")
