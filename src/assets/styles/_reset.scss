@@ -39,3 +39,7 @@ q:before, q:after {
 input:focus {
   outline:none;
 }
+
+input[type='submit'] {
+   appearance: none;
+}
