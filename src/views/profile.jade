@@ -1,0 +1,38 @@
+doctype html
+html(lang="en")
+  head
+  meta(charset="UTF-8")
+  meta(http-equiv="X-UA-Compatible", content="IE=edge")
+  meta(name="viewport",content="width=device-width, initial-scale=1")
+  meta(name="description",content="")
+  link(rel="shortcut icon", href="data:image/x-icon;,", type="image/x-icon")
+  meta(name="author", content="Sergey Pozhilov")
+  link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Open+Sans")
+  link(rel="stylesheet",href="assets/styles/main.css")
+  title Jessica Parker Profile - Frontend test
+
+  body.page.page_profile
+
+    .page__line
+      .profile
+        .profile__avatar-container
+          img.profile__avatar(src="assets/images/profile_image.jpg", alt="Jessica Parker")
+        h2.profile__name Jessica Parker
+        .profile__details
+          .profile__detail.profile__detail_address Newport Beach, CA
+          .profile__detail.profile__detail_phone (949) 325 - 68594
+        .rating
+          .rating__stars
+            .rating__stars_rating(style="width:80%")
+              .hidden 4 stars
+          .rating__reviews 6 reviews
+      .menu
+        .menu__item.menu__item_active About
+        .menu__item Settings
+        .menu__item Option 1
+        .menu__item Option 2
+        .menu__item Option 3
+
+    .page__line.page__line_profile
+      .page__container
+        h3.page__caption Profile info

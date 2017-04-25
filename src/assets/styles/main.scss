@@ -204,6 +204,29 @@ label {
   }
 }
 
+.page_profile {
+  background: #f5f8f9;
+  @include tablet-up {
+    padding:71px 0 0 0;
+  }
+}
+
+
+.page__line {
+  margin-left: auto;
+  margin-right: auto;
+
+  & + & { margin-top:31px; }
+
+  @include tablet-up {
+    background: $white;
+    width:760px;
+  }
+
+  @include desktop {
+    width: 1170px;
+  }
+}
 
 
 // Helpers: Animations
