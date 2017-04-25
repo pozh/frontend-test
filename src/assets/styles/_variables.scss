@@ -1,18 +1,30 @@
-$color-background:          #fff;
+$white:                     #fff;
+$black:                     #000;
 $color-text:                #000;
 $color-action:              #007ee5;
+$color-line:                #d0dce7;
+$color-text-dimmed:         #a8b8c4;
 
 $font-family-def:           "Open sans", Helvetica, Arial, Helvetica, sans-serif;
 $font-family-body:          $font-family-def;
 $font-family-headings:      $font-family-def;
 $font-family-labels:        $font-family-def;
-$font-family-inputs:        $font-family-def;
 
 $font-size-def:             14px;
 $font-size-body:            $font-size-def;
-$font-size-inputs:          $font-size-def;
 
 $tablet-width:              768px;
 $desktop-width:             1024px;
+
+// input default
+$font-size-input:           $font-size-def;
+$font-family-input:         $font-family-def;
+$color-text-input:          $color-text;
+
+// label default
+$font-size-label:           $font-size-def;
+$font-family-label:         $font-family-def;
+$color-text-label:          $color-text;
+
 
 $radius:                    4px;
