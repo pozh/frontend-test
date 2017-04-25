@@ -3,39 +3,99 @@
 @import "mixins";
 
 
-html, body { height:100%; }
+html{ height:100%; }
 
 // Typography
 body { font-family: $font-family-body; font-size: $font-size-body }
+a { color:$color-action; text-decoration: none; }
 
 
-// UI Blocks: Panels
+// Panels
 .panel {
-  &__body { background: $color-background; padding:38px 51px; }
+  &__caption {
+    font-size: 25px;
+    text-align: center;
+    margin-bottom:80px;
+    @include tablet-up {
+      margin-bottom:43px;
+      padding: 0 0 32px 0;
+      border-bottom: 1px solid $color-line;
+    }
+  }
+  &__body {
+    background: $white;
+    @include tablet-up {
+      border-radius:$radius;
+      box-shadow:0 4px 16px rgba(58, 75, 93, .27);
+    }
+  }
+  &__text {
+    padding:64px 51px 32px 51px;
+    @include tablet-up {
+      padding:38px 51px 32px 51px;
+    }
+  }
+  &__footer {
+    @include smartphone {
+      position: absolute;
+      bottom:0;
+      width: 100%;
+    }
+    @include tablet-up {
+      padding: 0 51px 38px 51px;
+    }
+  }
 }
 
 .panel_login {
   @include desktop {
-    width: 300px;
+    width: 500px;
     display: flex;
     align-self: center;
   }
 }
 
-// Controls: Buttons
-.button { }
-.button__blue { }
+// Buttons
+.btn {
+  padding:18px;
+  border-radius:$radius;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor:pointer;
+  @include tablet-up {
+  }
+  &__primary {
+    background: $color-action;
+    color:$white;
+    &:hover { background:lighten($color-action, 12%); }
+  }
+  &_block {
+    width:100%;
+    @include smartphone {
+      border-radius:0;
+    }
+  }
+}
 
 
-// Forms: Inputs
+// Inputs & labels
+input {
+  font-family: $font-family-input;
+  font-size: $font-size-input;
+  color:$color-text-input;
+}
+
+label {
+  font-family: $font-family-label;
+  font-size: $font-size-label;
+  color:$color-text-label;
+}
+
 .input {
   position:relative;
-  margin-bottom:45px;
 
   &__label {
-    color:#999;
-    font-size:18px;
-    font-weight:normal;
     position:absolute;
     pointer-events:none;
     left:0px;
@@ -46,18 +106,20 @@ body { font-family: $font-family-body; font-size: $font-size-body }
   }
 
   &__field {
-    font-size:$font-size-inputs;
+    font-size:$font-size-input;
+    color:$color-text;
     padding:10px 10px 10px 0;
     display:block;
     width:100%;
     border:none;
-    border-bottom:1px solid #757575;
+    border-bottom:1px solid $color-line;
 
     &:focus, &:valid {
-      ~ label    {
+      ~ label {
         top:-20px;
-        font-size:14px;
-        color:#5264AE;
+        color: #a6b0b7;
+        font-size:12px;
+        text-transform: uppercase;
       }
     }
 
@@ -96,16 +158,25 @@ body { font-family: $font-family-body; font-size: $font-size-body }
 }
 
 
-// Forms: Login form
-.login-form {
-  &__item-notes {
+// Login form
+.form-simple {
+  &__item {
+    margin:32px 0;
+    &:last-child { margin-bottom:0; }
   }
+
+  &__item-notes {
+    font-size: 14px;
+    text-align: center;
+    color: $color-text-dimmed;
+  }
+  &__item-action { padding:0; }
 }
 
 
-// Pages: Login
+// Login Page
 .page_login {
-  @include desktop {
+  @include tablet-up {
     background: url(../images/fullscreen_bg_image.jpg) no-repeat top center fixed;
     background-size: cover;
     height: 100%;
@@ -115,9 +186,6 @@ body { font-family: $font-family-body; font-size: $font-size-body }
   }
 }
 
-.page__container_login {
-
-}
 
 
 // Helpers: Animations

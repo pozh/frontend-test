@@ -12,28 +12,29 @@ html(lang="en")
   title Login - Frontend test
 
   body.page.page_login
+
     .panel.panel_login
       .panel__body
-        form.login-form
-        h2.login-form__caption Login
-        .login-form__body
-          .login-form__item
-            .input
-              input.input__field#email(type="text", required)
-              label.input__label.input__label_email(for="email") Email
-              span.input__highlight
-              span.input__bar
-          .login-form__item
-            .input
-              input.input__field#password(type="password", required)
-              label.input__label.input__label_email(for="password") Password
-              span.input__highlight
-              span.input__bar
-          .login-form__item-notes
-            | By signing up or clicking continue, I confirm that I have
-            | read and agree to the #[a(href="") Terms] and #[a(href="") Privacy Policy]
-          .login-form__item-action
-            input.btn.btn__submit
+        .panel__text
+          h2.panel__caption Login
+          form.form-simple
+            .form-simple__item
+              .input
+                input.input__field#email(type="text", required)
+                label.input__label.input__label_email(for="email") Email
+                span.input__highlight
+                span.input__bar
+            .form-simple__item
+              .input
+                input.input__field#password(type="password", required)
+                label.input__label.input__label_email(for="password") Password
+                span.input__highlight
+                span.input__bar
+            .form-simple__item.form-simple__item-notes
+              | By signing up or clicking continue, I confirm that I have
+              |  read and agree to the #[a(href="") Terms] and #[a(href="") Privacy Policy]
+        .panel__footer
+          input.btn.btn__primary.btn_block(value="LOGIN")
 
   script(src="assets/js/vendor.js")
   script(src="assets/js/main.js")
