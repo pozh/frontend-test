@@ -8,7 +8,8 @@ html{ height:100%; }
 // Typography
 body {
   font-family: $font-family-body;
-  font-size: $font-size-body
+  font-size: $font-size-body;
+  line-height: 1.5;
 }
 a {
   color:$color-action;
@@ -41,6 +42,10 @@ a {
       padding:38px 51px 32px 51px;
     }
   }
+  &__content{
+    padding:0 0 20px 0;
+    &_center { text-align: center; }
+  }
   &__footer {
     @include smartphone {
       position: absolute;
@@ -53,7 +58,8 @@ a {
   }
 }
 
-.panel_login {
+.panel_login,
+.panel_message {
   @include tablet-up {
     width: 500px;
     display: flex;
@@ -61,8 +67,13 @@ a {
   }
 }
 
+.panel__message {
+  &_center { text-align: center; }
+}
+
 // Buttons
 .btn {
+  display: inline-block;
   padding:18px;
   border-radius:$radius;
   text-align: center;
@@ -180,8 +191,9 @@ label {
 }
 
 
-// Login Page
-.page_login {
+// Login Page, short message page
+.page_login,
+.page_message {
   @include tablet-up {
     background: url(../images/fullscreen_bg_image.jpg) no-repeat top center fixed;
     background-size: cover;
