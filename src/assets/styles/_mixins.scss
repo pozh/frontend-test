@@ -23,7 +23,7 @@
 
 // target both tablets and desktops
 @mixin tablet-up {
-  @media (min-width: #{$desktop-width}) {
+  @media (min-width: #{$tablet-width}) {
     @content;
   }
 }
