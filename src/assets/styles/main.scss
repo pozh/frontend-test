@@ -6,8 +6,14 @@
 html{ height:100%; }
 
 // Typography
-body { font-family: $font-family-body; font-size: $font-size-body }
-a { color:$color-action; text-decoration: none; }
+body {
+  font-family: $font-family-body;
+  font-size: $font-size-body
+}
+a {
+  color:$color-action;
+  text-decoration: none;
+}
 
 
 // Panels
@@ -48,7 +54,7 @@ a { color:$color-action; text-decoration: none; }
 }
 
 .panel_login {
-  @include desktop {
+  @include tablet-up {
     width: 500px;
     display: flex;
     align-self: center;
