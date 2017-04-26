@@ -3,15 +3,20 @@
 @import "mixins";
 @import "buttons";
 @import "forms";
+@import "profile";
 
 
-html{ height:100%; }
+html,
+body {
+  height:100%;
+}
 
 // Typography
 body {
   font-family: $font-family-body;
   font-size: $font-size-body;
   line-height: 1.5;
+  color: $color-text;
 }
 a {
   color:$color-action;
@@ -73,7 +78,6 @@ a {
   &_center { text-align: center; }
 }
 
-
 // Login Page, short message page
 .page_login,
 .page_message {
@@ -87,33 +91,4 @@ a {
   }
 }
 
-.page_profile {
-  background: #f5f8f9;
-  @include tablet-up {
-    padding:71px 0 0 0;
-  }
-}
-
-
-.page__line {
-  margin-left: auto;
-  margin-right: auto;
-
-  & + & { margin-top:31px; }
-
-  @include tablet-up {
-    background: $white;
-    width:760px;
-  }
-
-  @include desktop {
-    width: 1170px;
-  }
-
-  &_profile {
-    @include tablet-up {
-      padding:46px 41px;
-      box-shadow:0 1px 6px rgba(114, 126, 136, .28);
-    }
-  }
-}
+.icon { font-family:"Ionicons"; }

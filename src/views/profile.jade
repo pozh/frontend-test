@@ -7,7 +7,8 @@ html(lang="en")
   meta(name="description",content="")
   link(rel="shortcut icon", href="data:image/x-icon;,", type="image/x-icon")
   meta(name="author", content="Sergey Pozhilov")
-  link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Open+Sans")
+  link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Open+Sans:400,600")
+  link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css")
   link(rel="stylesheet",href="assets/styles/main.css")
   title Jessica Parker Profile - Frontend test
 
@@ -15,24 +16,45 @@ html(lang="en")
 
     .page__line
       .profile
-        .profile__avatar-container
-          img.profile__avatar(src="assets/images/profile_image.jpg", alt="Jessica Parker")
-        h2.profile__name Jessica Parker
-        .profile__details
-          .profile__detail.profile__detail_address Newport Beach, CA
-          .profile__detail.profile__detail_phone (949) 325 - 68594
-        .rating
-          .rating__stars
-            .rating__stars_rating(style="width:80%")
-              .hidden 4 stars
-          .rating__reviews 6 reviews
-      .menu
-        .menu__item.menu__item_active About
-        .menu__item Settings
-        .menu__item Option 1
-        .menu__item Option 2
-        .menu__item Option 3
+        .btn.profile__btn LOGOUT
+        .profile__avatar
+          .profile__avatar-image(style="background-image:url(assets/images/profile_image.jpg); background-position:top center;")
+        h1.profile__name Jessica Parker
+        .profile-details
+          .profile-details__line
+            i.icon.profile-details__icon &#xf455;
+            span.profile-details__text Newport Beach, CA
+          .profile-details__line
+            i.icon.profile-details__icon &#xf4b8;
+            span.profile-details__text (949) 325 - 68594
+        .profile-rating
+          .star-rating
+            i.icon.star-rating__icon &#xf3ae;
+            i.icon.star-rating__icon &#xf3ae;
+            i.icon.star-rating__icon &#xf3ae;
+            i.icon.star-rating__icon &#xf3ae;
+            i.icon.star-rating__icon &#xf3ae;
+            .star-rating__rating(style="width:28%;")
+              i.icon.star-rating__icon &#xf2fc;
+              i.icon.star-rating__icon &#xf2fc;
+              i.icon.star-rating__icon &#xf2fc;
+              i.icon.star-rating__icon &#xf2fc;
+              i.icon.star-rating__icon &#xf2fc;
+          .profile-rating__reviews
+            span.profile-rating__reviews-number 6
+            span.profile-rating__reviews-caption reviews
+      .profile-menu
+        .profile-menu__item.profile-menu__item_active About
+        .profile-menu__item Settings
+        .profile-menu__item Option 1
+        .profile-menu__item Option 2
+        .profile-menu__item Option 3
+        .profile-menu__followers-container
+          .followers
+            a.followers__add
+            span.followers__count 15 followers
 
     .page__line.page__line_profile
       .page__container
         h3.page__caption Profile info
+        .profile-info
