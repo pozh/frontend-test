@@ -1,6 +1,8 @@
 @import "reset";
 @import "variables";
 @import "mixins";
+@import "buttons";
+@import "forms";
 
 
 html{ height:100%; }
@@ -69,135 +71,6 @@ a {
 
 .panel__message {
   &_center { text-align: center; }
-}
-
-// Buttons
-.btn {
-  display: inline-block;
-  padding:10px 22px 9px 22px;
-  border-radius:$radius;
-  border:1px solid $color-action;
-  background:$white;
-  text-align: center;
-  font-weight: bold;
-  font-size: 12px;
-  letter-spacing: 1px;
-  color:$color-action;
-  cursor:pointer;
-  &:hover {
-    background:lighten($color-action, 53%);
-  }
-  &_primary {
-    background: $color-action;
-    color:$white;
-    &:hover {
-      background:lighten($color-action, 12%);
-      border-color:lighten($color-action, 12%);
-    }
-  }
-  &_login {
-  }
-}
-
-
-// Inputs & labels
-input {
-  font-family: $font-family-input;
-  font-size: $font-size-input;
-  color:$color-text-input;
-}
-
-label {
-  font-family: $font-family-label;
-  font-size: $font-size-label;
-  color:$color-text-label;
-}
-
-.input {
-  position:relative;
-
-  &__label {
-    position:absolute;
-    pointer-events:none;
-    left:0px;
-    top:10px;
-    transition:0.2s ease all;
-    -moz-transition:0.2s ease all;
-    -webkit-transition:0.2s ease all;
-  }
-
-  &__field {
-    font-size:$font-size-input;
-    color:$color-text;
-    padding:10px 10px 10px 0;
-    display:block;
-    width:100%;
-    border:none;
-    border-bottom:1px solid $color-line;
-
-    &:focus, &:valid {
-      ~ label {
-        top:-20px;
-        color: #a6b0b7;
-        font-size:12px;
-        text-transform: uppercase;
-      }
-    }
-
-    &:focus {
-      ~ &__bar:before, ~ &__bar:after { width:50%; }
-      ~ &__highlight { animation:input__animation 0.3s ease; }
-    }
-  }
-
-  &__bar {
-    position:relative; display:block; width:100%;
-
-    &:before, &:after   {
-      content:'';
-      height:3px;
-      width:0;
-      bottom:-1px;
-      position:absolute;
-      background:#5264AE;
-      transition:0.2s ease all;
-    }
-
-    &:before { left:50%; }
-    &:after { right:50%; }
-  }
-
-  &__highlight {
-    position:absolute;
-    height:60%;
-    width:100px;
-    top:25%;
-    left:0;
-    pointer-events:none;
-    opacity:0.5;
-  }
-}
-
-
-// Login form
-.form-simple {
-  &__item {
-    margin:32px 0;
-    &:last-child { margin-bottom:0; }
-  }
-
-  &__item-notes {
-    font-size: 14px;
-    text-align: center;
-    color: $color-text-dimmed;
-  }
-  &__btn_action {
-    padding:18px;
-    width:100%;
-    @include smartphone {
-      border-radius:0;
-    }
-  }
 }
 
 

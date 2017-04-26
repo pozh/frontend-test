@@ -1,0 +1,26 @@
+.btn {
+  display: inline-block;
+  padding:10px 22px 9px 22px;
+  border-radius:$radius;
+  border:1px solid $color-action;
+  background:$white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color:$color-action;
+  cursor:pointer;
+  &:hover {
+    background:lighten($color-action, 53%);
+  }
+  &_primary {
+    background: $color-action;
+    color:$white;
+    &:hover {
+      background:lighten($color-action, 12%);
+      border-color:lighten($color-action, 12%);
+    }
+  }
+  &_login {
+  }
+}
