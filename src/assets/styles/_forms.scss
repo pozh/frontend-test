@@ -96,3 +96,9 @@ label {
   }
 }
 
+
+// Helpers: Animations
+@keyframes input__animation {
+  from { background:#5264AE; }
+  to  { width:0; background:transparent; }
+}
