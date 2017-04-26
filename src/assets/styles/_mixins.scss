@@ -1,5 +1,3 @@
-@import "variables";
-
 // target large screens, i.e. desktops
 @mixin smartphone {
   @media (max-width: #{$tablet-width - 1px}) {
