@@ -74,24 +74,28 @@ a {
 // Buttons
 .btn {
   display: inline-block;
-  padding:18px;
+  padding:10px 22px 9px 22px;
   border-radius:$radius;
+  border:1px solid $color-action;
+  background:$white;
   text-align: center;
   font-weight: bold;
+  font-size: 12px;
   letter-spacing: 1px;
+  color:$color-action;
   cursor:pointer;
-  @include tablet-up {
+  &:hover {
+    background:lighten($color-action, 53%);
   }
-  &__primary {
+  &_primary {
     background: $color-action;
     color:$white;
-    &:hover { background:lighten($color-action, 12%); }
-  }
-  &_block {
-    width:100%;
-    @include smartphone {
-      border-radius:0;
+    &:hover {
+      background:lighten($color-action, 12%);
+      border-color:lighten($color-action, 12%);
     }
+  }
+  &_login {
   }
 }
 
@@ -187,7 +191,13 @@ label {
     text-align: center;
     color: $color-text-dimmed;
   }
-  &__item-action { padding:0; }
+  &__btn_action {
+    padding:18px;
+    width:100%;
+    @include smartphone {
+      border-radius:0;
+    }
+  }
 }
 
 
@@ -225,6 +235,13 @@ label {
 
   @include desktop {
     width: 1170px;
+  }
+
+  &_profile {
+    @include tablet-up {
+      padding:46px 41px;
+      box-shadow:0 1px 6px rgba(114, 126, 136, .28);
+    }
   }
 }
 
