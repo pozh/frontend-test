@@ -1,68 +1,55 @@
-.page_profile {
-  background: #f5f8f9;
-  @include tablet-up {
-    padding:71px 0 0 0;
-  }
-}
-
-
-.page__line {
-  margin-left: auto;
-  margin-right: auto;
-
-  & + & { margin-top:31px; }
-
-  @include tablet-up {
-    background: $white;
-    width:760px;
-  }
-
-  @include desktop {
-    width: 1170px;
-  }
-
-  &_profile {
-    @include tablet-up {
-      padding:46px 41px;
-      box-shadow:0 1px 6px rgba(114, 126, 136, .28);
-    }
-  }
-}
-
 .profile {
-  padding:20px 20px 0 20px;
+  padding:20px 20px 20px 20px;
   position:relative;
   @include tablet-up {
-    text-align: left;
+    &:after {
+      content:"";
+      display: inline-block;
+      clear:both;
+      height:0;
+    }
   }
-  &:after {
-    content:'';
-    display: block;
-    width:100%;
-    height:0;
-    clear:both;
-  }
+
   &__btn {
     float:right;
     @include smartphone {
       margin:0 - $btn-padding-y 0 - $btn-padding-x 0 0;
     }
   }
+
+  &__upload {
+    position: absolute;
+    top: 76px;
+    left: 50%;
+    width:260px;
+    margin-left: -130px;
+
+    @include smartphone {
+      display: none;
+    }
+  }
+
   &__avatar {
     padding:76px 0 0 0;
     text-align: center;
+    display: block;
+    margin:76px auto 0 auto;
+    width: 128px;
+    height: 128px;
+    box-shadow:0 1px 24px rgba(189, 196, 201, .7);
+
     @include tablet-up {
       float:left;
-      padding-right:27px;
-    }
-    &-image {
-      display: block;
-      margin:0 auto;
-      width: 128px;
-      height: 128px;
-      box-shadow:0 1px 24px rgba(189, 196, 201, .7);
+      margin-top: 76px - 36px;
+      margin-right: 27px;
+      z-index:1000;
+      position: relative;
+      top:36px;
+      width: 170px;
+      height:170px;
     }
   }
+
   &__name {
     font-size: 20px;
     font-weight: 600;
@@ -72,18 +59,71 @@
     @include tablet-up {
       text-align: left;
       padding-top: 76px + 37px;
-      padding-left: 27px;
     }
   }
+
+  &__details {
+    padding: 12px 0 0 0;
+
+    &-icon {
+      font-size: 20px;
+      color: $color-text-dimmed;
+      margin:0 10px 0 0;
+      vertical-align: middle;
+    }
+
+    &-text {
+      font-size: 12px;
+      vertical-align: middle;
+      &_phone { margin-left:-2px; }
+    }
+  }
+
   &__rating {
+    @include tablet-up {
+      position: absolute;
+      right: 20px;
+      top:147px;
+    }
+
+    &-stars {
+      color:$color-action;
+      font-size:19px;
+      @include tablet-up {
+        vertical-align: middle;
+        color:#727e88;
+      }
+    }
+
+    &-reviews {
+      @include tablet-up {
+        display: inline-block;
+        vertical-align: middle;
+        margin:0 0 0 30px;
+      }
+    }
+
+    &-number {
+      font-weight: bold;
+      margin-right:1em;
+    }
+  }
+
+  &__followers {
+    padding-top: 17px;
+    @include tablet-up {
+      position:absolute;
+      padding-top: 0;
+      z-index:1000;
+      right:20px;
+      bottom:-25px;
+    }
   }
 }
 
 .star-rating {
   position: relative;
   display: inline-block;
-  font-size:19px;
-  color:$color-action;
   &__icon + &__icon {
     margin-left:7px;
   }
@@ -97,27 +137,78 @@
   }
 }
 
-.profile-details {
-  padding: 12px 0 0 0;
-  @include tablet-up {
-    padding-left: 27px;
-  }
+.followers{
+  color:#a6b0b7;
+
+
   &__icon {
-    font-size: 20px;
-    color: $color-text-dimmed;
-    margin:0 10px 0 0;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 28px;
+  }
+
+  &__number {
+    margin-left: 1em;
+    color: $color-text;
+    display: inline-block;
     vertical-align: middle;
   }
+
   &__text {
-    font-size: 12px;
+    display: inline-block;
     vertical-align: middle;
   }
 }
 
-
-.profile-menu {
+.menu {
+  background: $white;
+  white-space: nowrap;
+  overflow: hidden;
+  padding:0 20px;
+  position: relative;
   width:100%;
+  box-shadow:0 1px 6px rgba(114,126,136,.28);
+
   &__item {
-    display:inline-block;
+    display: inline-block;
+    border-bottom: 2px solid transparent;
+    padding:22px 0 17px 0;
+    color: $color-text;
+    font-size: 14px;
+    text-transform: uppercase;
+    @include tablet-up {
+      padding:24px 0;
+    }
+
+    & + & {
+      margin-left:22px;
+    }
+
+    &_active,
+    &:hover {
+      border-color: $color-action;
+    }
+  }
+
+  // content fade-out on the right
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    top:0;
+    width: 48px;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(255,255,255,0) 0%,
+      rgba(255,255,255,1) 60%);
+  }
+
+  &_profile {
+    @include tablet-up {
+      padding-left:170px + 20px + 27px;
+      margin-top:-31px;
+    }
   }
 }
