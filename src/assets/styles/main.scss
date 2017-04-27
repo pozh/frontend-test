@@ -1,11 +1,12 @@
 @import "reset";
 @import "variables";
 @import "mixins";
+@import "pages";
 @import "buttons";
 @import "forms";
 @import "panels";
 @import "profile";
-
+@import "menu";
 
 html,
 body {
@@ -25,17 +26,5 @@ a {
 }
 
 
-// Login Page, short message page
-.page_login,
-.page_message {
-  @include tablet-up {
-    background: url(../images/fullscreen_bg_image.jpg) no-repeat top center fixed;
-    background-size: cover;
-    height: 100%;
-    display:flex;
-    align-items:center;
-    justify-content: center;
-  }
-}
-
+// Helpers / unsorted stuff
 .icon { font-family:"Ionicons"; }

@@ -1,0 +1,44 @@
+.page__line {
+  margin-left: auto;
+  margin-right: auto;
+
+  & + & { margin-top:31px; }
+
+  @include tablet-up {
+    background: $white;
+    width:760px;
+  }
+
+  @include desktop {
+    width: 1170px;
+  }
+
+  &_profile {
+    @include tablet-up {
+      padding:46px 41px;
+      box-shadow:0 1px 6px rgba(114, 126, 136, .28);
+    }
+  }
+}
+
+
+// Login Page, short message page
+.page_login,
+.page_message {
+  @include tablet-up {
+    background: url(../images/fullscreen_bg_image.jpg) no-repeat top center fixed;
+    background-size: cover;
+    height: 100%;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+  }
+}
+
+// Profile page
+.page_profile {
+  background: #f5f8f9;
+  @include tablet-up {
+    padding:71px 0 0 0;
+  }
+}
