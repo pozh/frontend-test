@@ -1,0 +1,52 @@
+.panel {
+  &__caption {
+    font-size: 25px;
+    text-align: center;
+    margin-bottom:80px;
+    @include tablet-up {
+      margin-bottom:43px;
+      padding: 0 0 32px 0;
+      border-bottom: 1px solid $color-line;
+    }
+  }
+  &__body {
+    background: $white;
+    @include tablet-up {
+      border-radius:$radius;
+      box-shadow:0 4px 16px rgba(58, 75, 93, .27);
+    }
+  }
+  &__text {
+    padding:64px 51px 32px 51px;
+    @include tablet-up {
+      padding:38px 51px 32px 51px;
+    }
+  }
+  &__content{
+    padding:0 0 20px 0;
+    &_center { text-align: center; }
+  }
+  &__footer {
+    @include smartphone {
+      position: absolute;
+      bottom:0;
+      width: 100%;
+    }
+    @include tablet-up {
+      padding: 0 51px 38px 51px;
+    }
+  }
+}
+
+.panel_login,
+.panel_message {
+  @include tablet-up {
+    width: 500px;
+    display: flex;
+    align-self: center;
+  }
+}
+
+.panel__message {
+  &_center { text-align: center; }
+}
