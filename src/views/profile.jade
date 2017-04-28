@@ -14,9 +14,9 @@ html(lang="en")
 
   body.page.page_profile
 
-    .page__line
+    .page__line.page__line_profile
       .profile
-        .btn.profile__btn LOGOUT
+        a.btn.profile__btn(href="index.html") LOGOUT
         .profile__avatar(style="background-image:url(assets/images/profile_image.jpg); background-position:top center;")
         h1.profile__name Jessica Parker
         .profile__details
@@ -48,15 +48,15 @@ html(lang="en")
             span.followers__number 15
             = ' '
             span.followers__text followers
-        a.btn.btn_secondary.btn_icon.profile__upload(href="")
+        .profile__upload: a.btn.btn_secondary.btn_icon(href="notimplemented.html")
           i.icon.btn__icon.btn__icon_secondary &#xf3f6;
           span.btn__icon-text Upload Cover Image
-      .menu.menu_profile
-        a.menu__item.menu__item_active(href="javascript:void(0)") About
-        a.menu__item(href="javascript:void(0)") Settings
-        a.menu__item(href="javascript:void(0)") Option 1
-        a.menu__item(href="javascript:void(0)") Option 2
-        a.menu__item(href="javascript:void(0)") Option 3
+      .profile__menu
+        a.profile__menu-item.profile__menu-item_active(href="javascript:void(0)") About
+        a.profile__menu-item(href="javascript:void(0)") Settings
+        a.profile__menu-item(href="javascript:void(0)") Option 1
+        a.profile__menu-item(href="javascript:void(0)") Option 2
+        a.profile__menu-item(href="javascript:void(0)") Option 3
 
     .page__line.page__line_profile
       .page__container
