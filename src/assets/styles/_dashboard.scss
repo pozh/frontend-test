@@ -1,0 +1,75 @@
+.dashboard {
+  &__caption {
+    font-size: 20px;
+    color: #727e88;
+    @include tablet-up {
+      font-size: 24px;
+    }
+  }
+
+  &__edit {
+    float:right;
+
+    @include tablet-up {
+      display: none;
+    }
+  }
+
+  &__details {
+    padding: 12px 0 0 0;
+
+    &:after {
+      @include tablet-up {
+        @include clear-floats;
+      }
+    }
+
+    &-line {
+      @include tablet-up {
+        background: #f5f8f8;
+        float:left;
+        clear:left;
+        padding:6px 6px;
+      }
+    }
+
+    &-line + &-line {
+      margin-top:14px;
+
+      @include tablet-up {
+        margin-top: 1px;
+      }
+
+      &_category {
+        margin-top: 7px;
+        margin-bottom:20px;
+      }
+    }
+
+    &-line_name {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    &-line_category {
+      color: #727e88;
+      @include tablet-up {
+        display: none;
+      }
+    }
+
+    &-icon {
+      font-size: 16px;
+      color: $color-text-dimmed;
+      margin:0 10px 0 0;
+      vertical-align: middle;
+    }
+
+    &-text {
+      font-size: 14px;
+      vertical-align: middle;
+      &_phone { margin-left:-2px; }
+    }
+  }
+
+}

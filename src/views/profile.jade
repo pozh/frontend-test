@@ -58,7 +58,30 @@ html(lang="en")
         a.profile__menu-item(href="javascript:void(0)") Option 2
         a.profile__menu-item(href="javascript:void(0)") Option 3
 
-    .page__line.page__line_profile
-      .page__container
-        h3.page__caption Profile info
-        .profile-info
+    .page__line.page__line_dashboard
+
+      .dashboard
+
+        .dashboard__edit
+          .btn-edit
+            i.icon.btn-edit__icon &#xf2bf;
+
+        h3.dashboard__caption Profile info
+
+        .dashboard__details
+          .dashboard__details-line.dashboard__details-line_name John Doe
+          .dashboard__details-line.dashboard__details-line_category Business
+          .dashboard__details-line
+            .user-detail
+            i.icon.dashboard__details-icon &#xf276;
+            span.dashboard__details-text www.seller.com
+
+          .dashboard__details-line
+            i.icon.dashboard__details-icon &#xf4b8;
+            span.dashboard__details-text (949) 325 - 68594
+          .dashboard__details-line
+            i.icon.dashboard__details-icon &#xf447;
+            span.dashboard__details-text Newport Beach, CA
+
+  script(src="assets/js/vendor.js")
+  script(src="assets/js/main.js")

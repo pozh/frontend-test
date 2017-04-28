@@ -1,5 +1,6 @@
 .page_login,
 .page_message {
+  height:100%;
   @include tablet-up {
     background: url(../images/fullscreen_bg_image.jpg) no-repeat top center fixed;
     background-size: cover;
@@ -12,6 +13,7 @@
 
 .page_profile {
   background: #f5f8f9;
+  padding-bottom: 34px;
   @include tablet-up {
     padding:71px 0 0 0;
   }
@@ -20,10 +22,13 @@
 .page__line {
   margin-left: auto;
   margin-right: auto;
+  background: $white;
+  padding: 24px;
 
   & + & { margin-top:31px; }
 
   @include tablet-up {
+    box-shadow:0 1px 6px rgba(114, 126, 136, .28);
     background: $white;
     width:760px;
   }
@@ -33,15 +38,24 @@
   }
 
   &_profile {
-    background: $white;
-    padding: 24px;
+    padding:0;
+    box-shadow: none;
     @include smartphone {
       border-top: 1px solid $color-line;
       border-bottom: 1px solid $color-line;
     }
     @include tablet-up {
-      padding:46px 41px;
-      box-shadow:0 1px 6px rgba(114, 126, 136, .28);
+      // padding:46px 41px;
+    }
+  }
+
+  &_dashboard {
+    @include smartphone {
+      border-top: 1px solid $color-line;
+      border-bottom: 1px solid $color-line;
+    }
+    @include tablet-up {
+      // padding:46px 41px;
     }
   }
 }
