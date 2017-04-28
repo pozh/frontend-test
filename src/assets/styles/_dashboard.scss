@@ -14,62 +14,140 @@
       display: none;
     }
   }
+}
 
-  &__details {
-    padding: 12px 0 0 0;
+.info {
+  padding: 12px 0 0 0;
 
-    &:after {
-      @include tablet-up {
-        @include clear-floats;
-      }
+  &:after {
+    @include tablet-up {
+      @include clear-floats;
     }
+  }
 
-    &-line {
-      @include tablet-up {
-        background: #f5f8f8;
-        float:left;
-        clear:left;
-        padding:6px 6px;
-      }
-    }
+  &__line {
+    font-size: 14px;
 
-    &-line + &-line {
+    & + & {
       margin-top:14px;
 
-      @include tablet-up {
-        margin-top: 1px;
-      }
-
       &_category {
-        margin-top: 7px;
-        margin-bottom:20px;
+        margin-top: 5px;
       }
     }
 
-    &-line_name {
+    &_name {
       font-size: 16px;
       font-weight: bold;
     }
 
-    &-line_category {
+    &_category {
       color: #727e88;
-      @include tablet-up {
+    }
+  }
+
+  &__icon {
+    font-size: 16px;
+    color: $color-text-dimmed;
+    margin:0 10px 0 0;
+    vertical-align: middle;
+  }
+
+  &__text {
+    vertical-align: middle;
+    &_phone {
+      margin-left:-2px;
+    }
+  }
+
+  &__ctrl {
+    display: none;
+  }
+
+  // Desktops & Tablets
+  @include tablet-up {
+    &__line {
+      clear: left;
+      float:left;
+
+      & + & {
+        margin-top: 1px;
+      }
+
+      &_category {
         display: none;
       }
     }
 
-    &-icon {
-      font-size: 16px;
-      color: $color-text-dimmed;
-      margin:0 10px 0 0;
-      vertical-align: middle;
+    &__text {
+      float:left;
+      background: #f5f8f8;
+      padding: 0px 24px 0px 6px;
+      height: 37px;
+      line-height: 37px;
     }
 
-    &-text {
-      font-size: 14px;
-      vertical-align: middle;
-      &_phone { margin-left:-2px; }
+    &__ctrl {
+      display: block;
+      float: left;
+    }
+
+    &__edit {
+      float: left;
+      width: 43px;
+      text-align: center;
+      height: 37px;
+      line-height: 37px;
+      background: #ecf1f5;
+      color: #727e88;
+
+      &-icon {
+        font-size: 16px;
+        font-weight: normal;
+      }
+
+      &:hover {
+        background: $color-action;
+        color: $white;
+      }
+    }
+
+  }
+}
+
+
+// Edit info - UI Widget for mobile
+.edit-ctrl {
+  float:right;
+  white-space: nowrap;
+
+  @include tablet-up {
+    display: none;
+  }
+
+  &__btn-edit {
+    float:right;
+    width:30px;
+    height:25px;
+    line-height: 25px;
+    color: #727e88;
+    background: #ecf1f5;
+    text-align-last: center;
+
+    &__icon {
+      margin:0 auto;
+      font-size: 17px;
     }
   }
 
+  &__confirm-dlg {
+    display: none;
+  }
+
+  &__btn {
+    text-transform: uppercase;
+    display: inline-block;
+  }
 }
+
+

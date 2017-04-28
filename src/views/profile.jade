@@ -63,25 +63,47 @@ html(lang="en")
       .dashboard
 
         .dashboard__edit
-          .btn-edit
-            i.icon.btn-edit__icon &#xf2bf;
+          .edit-ctrl
+            a.edit-ctrl__btn-edit(href="javascript:void(0)")
+              i.icon.edit-ctrl__edit-icon &#xf2bf;
+            .edit-ctrl__confirm-dlg
+              a(href="").btn.edit-ctrl__btn Cancel
+              a(href="").btn.edit-ctrl__btn Save
 
         h3.dashboard__caption Profile info
 
-        .dashboard__details
-          .dashboard__details-line.dashboard__details-line_name John Doe
-          .dashboard__details-line.dashboard__details-line_category Business
-          .dashboard__details-line
-            .user-detail
-            i.icon.dashboard__details-icon &#xf276;
-            span.dashboard__details-text www.seller.com
-
-          .dashboard__details-line
-            i.icon.dashboard__details-icon &#xf4b8;
-            span.dashboard__details-text (949) 325 - 68594
-          .dashboard__details-line
-            i.icon.dashboard__details-icon &#xf447;
-            span.dashboard__details-text Newport Beach, CA
+        .info
+          .info__line.info__line_name
+            .info__text John Doe
+            .info__ctrl
+              a.info__edit(href="javascript:void(0)")
+                i.icon.info__edit-icon &#xf2bf;
+          .info__line.info__line_category
+            .info__text Business
+            .info__ctrl
+              a.info__edit(href="javascript:void(0)")
+                i.icon.info__edit-icon &#xf2bf;
+          .info__line
+            .info__text
+              i.icon.info__icon &#xf276;
+              | www.seller.com
+            .info__ctrl
+              a.info__edit(href="javascript:void(0)")
+                i.icon.info__edit-icon &#xf2bf;
+          .info__line
+            .info__text
+              i.icon.info__icon &#xf4b8;
+              | (949) 325 - 68594
+            .info__ctrl
+                a.info__edit(href="javascript:void(0)")
+                  i.icon.info__edit-icon &#xf2bf;
+          .info__line
+            .info__text
+              i.icon.info__icon &#xf447;
+              | Newport Beach, CA
+            .info__ctrl
+                a.info__edit(href="javascript:void(0)")
+                  i.icon.info__edit-icon &#xf2bf;
 
   script(src="assets/js/vendor.js")
   script(src="assets/js/main.js")
