@@ -17,7 +17,8 @@ gulp.task('jshint', function() {
 gulp.task('js', function() {
   return gulp.src('./src/assets/js/main.js')
     .pipe(webpack(require('./webpack.config.js')))
-    .pipe(gulp.dest('./dist/assets/js/'));
+    .pipe(gulp.dest('./dist/assets/js/'))
+    .pipe(browserSync.reload({stream: true}));
 });
 
 

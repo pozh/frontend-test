@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack')
+var BabiliPlugin = require("babili-webpack-plugin");
 
 var node_dir = path.resolve(__dirname, './node_modules');
 
@@ -30,12 +31,7 @@ module.exports = {
 
 module.exports.devtool = '#source-map'
 module.exports.plugins = (module.exports.plugins || []).concat([
-  new webpack.optimize.UglifyJsPlugin({
-    sourceMap: false,
-    compress: {
-      warnings: false
-    }
-  })
+  new BabiliPlugin()
 ]);
 
 
