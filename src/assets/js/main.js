@@ -103,6 +103,6 @@ const miniEditor = new MiniEditor();
 
 // User information controls
 let infoLines = [];
-Array.from($('#user-info .info__line')).forEach((ctrl) => {
+$('#user-info .info__line').map((i, ctrl) => {
   infoLines.push(new InfoCtrl(ctrl));
 });

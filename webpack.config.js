@@ -1,6 +1,5 @@
 var path = require('path');
 var webpack = require('webpack')
-var BabiliPlugin = require("babili-webpack-plugin");
 
 var node_dir = path.resolve(__dirname, './node_modules');
 
@@ -19,19 +18,15 @@ module.exports = {
     path: path.resolve(__dirname, './dist/assets/js/'),
     filename: '[name].js',
   },
+  devtool: '#source-map',
   module: {
     loaders: [{
       test: /\.js$/,
       exclude: /(node_modules)/,
-      loader: 'babel-loader',
-      options: {presets: ['es2015']},
-    }],
+      loader: 'babel',
+      query: {
+        presets: ['es2015-ie', 'babili']
+      }
+    }]
   }
 }
-
-module.exports.devtool = '#source-map'
-module.exports.plugins = (module.exports.plugins || []).concat([
-  new BabiliPlugin()
-]);
-
-
