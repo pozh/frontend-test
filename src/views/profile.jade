@@ -65,78 +65,95 @@ html(lang="en")
 
         .dashboard__edit
           #profile-edit-ctrl.profile-edit-ctrl
-            a.profile-edit-ctrl__btn-edit.js-toggler(href="")
+            a.profile-edit-ctrl__btn-edit.js-toggler(href="javascript:void(0)")
               i.icon.profile-edit-ctrl__edit-icon &#xf2bf;
             .profile-edit-ctrl__confirm-dlg.js-dlg
-              a(href="").profile-edit-ctrl__btn.js-cancel Cancel
-              a(href="").profile-edit-ctrl__btn.js-save Save
+              a(href="javascript:void(0)").profile-edit-ctrl__btn.js-cancel Cancel
+              a(href="javascript:void(0)").profile-edit-ctrl__btn.js-save Save
 
         h3.dashboard__caption Profile info
 
-        .info.hidden
-          .info__line.info__line_name
-            .info__text John Doe
+        #user-info.info
+          .info__line.info__line_name(data-type="Full Name")
+            .info__text
+              span.js_value Jessica Parker
             .info__ctrl
               a.info__edit(href="javascript:void(0)")
                 i.icon.info__edit-icon &#xf2bf;
-          .info__line.info__line_category
-            .info__text Business
+          .info__line.info__line_category(data-type="Category")
+            .info__text
+              span.js_value Business
             .info__ctrl
               a.info__edit(href="javascript:void(0)")
                 i.icon.info__edit-icon &#xf2bf;
-          .info__line
+          .info__line(data-type="Website")
             .info__text
               i.icon.info__icon &#xf276;
-              | www.seller.com
+              span.js_value www.seller.com
             .info__ctrl
               a.info__edit(href="javascript:void(0)")
                 i.icon.info__edit-icon &#xf2bf;
-          .info__line
+          .info__line(data-type="Phone Number")
             .info__text
               i.icon.info__icon &#xf4b8;
-              | (949) 325 - 68594
+              span.js_value (949) 325 - 68594
             .info__ctrl
                 a.info__edit(href="javascript:void(0)")
                   i.icon.info__edit-icon &#xf2bf;
-          .info__line
+          .info__line(data-type="City, State &amp; Zip")
             .info__text
               i.icon.info__icon &#xf447;
-              | Newport Beach, CA
+              span.js_value Newport Beach, CA
             .info__ctrl
                 a.info__edit(href="javascript:void(0)")
                   i.icon.info__edit-icon &#xf2bf;
-        .dashboard__editor
+
+        #user-editor.dashboard__editor
           form.form-simple(action="", method="GET")
             .form-simple__item
               .input
-                input.input__field#fname(type="text", required)
+                input.input__field#fname(type="text", value="Jessica")
                 label.input__label(for="fname") First Name
                 span.input__highlight
                 span.input__bar
             .form-simple__item
               .input
-                input.input__field#lname(type="text", required)
+                input.input__field#lname(type="text", value="Parker")
                 label.input__label(for="lname") Last Name
                 span.input__highlight
                 span.input__bar
             .form-simple__item
               .input
-                input.input__field#website(type="text", required)
+                input.input__field#website(type="text", value="www.seller.com")
                 label.input__label(for="website") Website
                 span.input__highlight
                 span.input__bar
             .form-simple__item
               .input
-                input.input__field#phone(type="text", required)
+                input.input__field#phone(type="text", value="949-000-000")
                 label.input__label(for="phone") Phone Number
                 span.input__highlight
                 span.input__bar
             .form-simple__item
               .input
-                input.input__field#address(type="text", required)
+                input.input__field#address(type="text", value="Newport Beach, CA")
                 label.input__label(for="address") City, State &amp; Zip
                 span.input__highlight
                 span.input__bar
+
+    #minieditor.minieditor
+      .minieditor__content
+        .form-simple
+          .form-simple__item
+            .input
+              input#minieditor-value.input__field(type="text", required)
+              label#minieditor-label.input__label(for="minieditor-value") &nbsp;
+              span.input__highlight
+              span.input__bar
+        .minieditor__buttons
+          button.js_save.minieditor__button.minieditor__button_primary SAVE
+          button.js_cancel.minieditor__button.minieditor__button_secondary CANCEL
+
 
   script(src="assets/js/vendor.js")
   script(src="assets/js/main.js")

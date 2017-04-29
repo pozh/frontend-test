@@ -1,0 +1,48 @@
+// Mini editor for individual user info lines
+.minieditor {
+  display: none;
+  @include tablet-up {
+    position: absolute;
+    left: 500px;
+    top: 500px;
+    width: 300px;
+    height: 140px;
+    background: $white;
+    border-radius: $radius;
+    box-shadow: 0 0 25px #bdc4c9;
+  }
+
+  &__content {
+    position: relative;
+    padding: 28px 20px 20px 20px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      top: 18px;
+      left: -7px;
+      background: $white;
+      transform: rotate(45deg);
+    }
+  }
+
+  &__buttons {
+    padding-top:20px;
+  }
+
+  &__button {
+    & + & { margin-left: 15px; }
+    width: 96px;
+
+    &_primary {
+      @include btn-primary;
+      padding: 6px 0;
+    }
+    &_secondary {
+      @include btn;
+      padding: 6px 0;
+    }
+  }
+}

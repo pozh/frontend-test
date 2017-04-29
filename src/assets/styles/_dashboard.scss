@@ -17,11 +17,13 @@
 
   &__editor {
     padding-top: 28px;
+    display: none;
   }
 }
 
 .info {
-  padding: 12px 0 0 0;
+  padding: 18px 0 0 0;
+  position: relative;
 
   &:after {
     @include tablet-up {
@@ -65,6 +67,10 @@
   }
 
   &__ctrl {
+    display: none;
+  }
+
+  &__minieditor {
     display: none;
   }
 
@@ -116,12 +122,15 @@
       }
     }
 
+    &__minieditor {
+      display: block;
+    }
   }
 }
 
 
 // Edit info - UI Widget for mobile
-.edit-ctrl {
+.profile-edit-ctrl {
   float:right;
   white-space: nowrap;
 
@@ -136,7 +145,7 @@
     line-height: 25px;
     color: #727e88;
     background: #ecf1f5;
-    text-align-last: center;
+    text-align  : center;
 
     &__icon {
       margin:0 auto;
@@ -146,13 +155,12 @@
 
   &__confirm-dlg {
     display: none;
+    margin:6px - $btn-padding-y 0 - $btn-padding-x + 2 0 0;
   }
 
   &__btn {
+    @include btn;
     text-transform: uppercase;
     display: inline-block;
   }
 }
-
-
-
