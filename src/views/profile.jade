@@ -72,7 +72,7 @@ html(lang="en")
 
         h3.dashboard__caption Profile info
 
-        .info
+        .info.hidden
           .info__line.info__line_name
             .info__text John Doe
             .info__ctrl
@@ -104,6 +104,38 @@ html(lang="en")
             .info__ctrl
                 a.info__edit(href="javascript:void(0)")
                   i.icon.info__edit-icon &#xf2bf;
+        .dashboard__editor
+          form.form-simple(action="", method="GET")
+            .form-simple__item
+              .input
+                input.input__field#fname(type="text", required)
+                label.input__label(for="fname") First Name
+                span.input__highlight
+                span.input__bar
+            .form-simple__item
+              .input
+                input.input__field#lname(type="text", required)
+                label.input__label(for="lname") Last Name
+                span.input__highlight
+                span.input__bar
+            .form-simple__item
+              .input
+                input.input__field#website(type="text", required)
+                label.input__label(for="website") Website
+                span.input__highlight
+                span.input__bar
+            .form-simple__item
+              .input
+                input.input__field#phone(type="text", required)
+                label.input__label(for="phone") Phone Number
+                span.input__highlight
+                span.input__bar
+            .form-simple__item
+              .input
+                input.input__field#address(type="text", required)
+                label.input__label(for="address") City, State &amp; Zip
+                span.input__highlight
+                span.input__bar
 
   script(src="assets/js/vendor.js")
   script(src="assets/js/main.js")
