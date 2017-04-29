@@ -26,15 +26,16 @@ label {
   &__field {
     font-size:$font-size-input;
     color:$color-text;
-    padding:10px 10px 10px 0;
+    padding:10px 10px 8px 0;
     display:block;
     width:100%;
     border:none;
+    border-radius: 0;
     border-bottom:1px solid $color-line;
 
     &:focus, &:valid {
       ~ label {
-        top:-20px;
+        top:-12px;
         color: #a6b0b7;
         font-size:12px;
         text-transform: uppercase;
@@ -78,13 +79,19 @@ label {
 
 .form-simple {
   &__item {
-    margin:32px 0;
-    &:last-child { margin-bottom:0; }
+    height:65px;
+
+    &_login {
+      height:80px;
+    }
+
+    &:last-child {
+      height:auto;
+    }
   }
 
   &__item-notes {
     font-size: 14px;
-    text-align: center;
     color: $color-text-dimmed;
   }
   &__btn_action {
