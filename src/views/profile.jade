@@ -16,7 +16,7 @@ html(lang="en")
 
     .page__line.page__line_profile
       .profile
-        a.btn.profile__btn(href="index.html") LOGOUT
+        a.profile__btn(href="index.html") LOGOUT
         .profile__avatar(style="background-image:url(assets/images/profile_image.jpg); background-position:top center;")
         h1.profile__name Jessica Parker
         .profile__details
@@ -48,9 +48,10 @@ html(lang="en")
             span.followers__number 15
             = ' '
             span.followers__text followers
-        .profile__upload: a.btn.btn_secondary.btn_icon(href="notimplemented.html")
-          i.icon.btn__icon.btn__icon_secondary &#xf3f6;
-          span.btn__icon-text Upload Cover Image
+        .profile__upload
+          a.btn-upload(href="notimplemented.html")
+            i.icon.btn-upload__icon &#xf3f6;
+            span.btn-upload__text Upload Cover Image
       .profile__menu
         a.profile__menu-item.profile__menu-item_active(href="javascript:void(0)") About
         a.profile__menu-item(href="javascript:void(0)") Settings
@@ -63,12 +64,12 @@ html(lang="en")
       .dashboard
 
         .dashboard__edit
-          .edit-ctrl
-            a.edit-ctrl__btn-edit(href="javascript:void(0)")
-              i.icon.edit-ctrl__edit-icon &#xf2bf;
-            .edit-ctrl__confirm-dlg
-              a(href="").btn.edit-ctrl__btn Cancel
-              a(href="").btn.edit-ctrl__btn Save
+          #profile-edit-ctrl.profile-edit-ctrl
+            a.profile-edit-ctrl__btn-edit.js-toggler(href="")
+              i.icon.profile-edit-ctrl__edit-icon &#xf2bf;
+            .profile-edit-ctrl__confirm-dlg.js-dlg
+              a(href="").profile-edit-ctrl__btn.js-cancel Cancel
+              a(href="").profile-edit-ctrl__btn.js-save Save
 
         h3.dashboard__caption Profile info
 

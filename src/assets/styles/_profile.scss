@@ -11,6 +11,7 @@
   }
 
   &__btn {
+    @include btn;
     float:right;
     @include smartphone {
       margin:0 - $btn-padding-y 0 - $btn-padding-x + 2 0 0;

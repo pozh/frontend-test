@@ -34,3 +34,39 @@
   height: 0;
   clear: both;
 }
+
+
+// Buttons
+@mixin btn {
+  display: inline-block;
+  padding:$btn-padding-y $btn-padding-x $btn-padding-y - 1 $btn-padding-x;
+  border-radius:$radius;
+  border:1px solid transparent;
+  background:transparent;
+  text-align: center;
+  font-weight: 600;
+  font-size: 12px;
+  color:$color-action;
+  cursor:pointer;
+  -webkit-tap-highlight-color: rgba(255,255,255,.0);
+
+  @include tablet-up {
+    border-color: $color-action;
+  }
+
+  &:hover,
+  &:active {
+    background:lighten($color-action, 53%);
+  }
+}
+
+@mixin btn-primary {
+  @include btn;
+
+  background: $color-action;
+  color:$white;
+  &:hover {
+    background:lighten($color-action, 12%);
+    border-color:lighten($color-action, 12%);
+  }
+}

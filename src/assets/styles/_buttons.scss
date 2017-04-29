@@ -1,55 +1,24 @@
-.btn {
-  display: inline-block;
-  padding:$btn-padding-y $btn-padding-x $btn-padding-y - 1 $btn-padding-x;
-  border-radius:$radius;
-  border:1px solid transparent;
-  background:transparent;
-  text-align: center;
-  font-weight: 600;
-  font-size: 12px;
-  color:$color-action;
-  cursor:pointer;
+.btn-upload {
+  @include btn;
+  padding-top: 0;
+  padding-bottom: 0;
+  color: #727e88;
+  font-size: 14px;
+  font-weight: normal;
+  border-color: $color-line;
 
   @include tablet-up {
-    border:1px solid $color-action;
-  }
-
-  &:hover {
-    background:lighten($color-action, 53%);
-  }
-
-  &_primary {
-    background: $color-action;
-    color:$white;
-    &:hover {
-      background:lighten($color-action, 12%);
-      border-color:lighten($color-action, 12%);
-    }
-  }
-
-  &_secondary {
     border-color: $color-line;
-    color: #727e88;
-    font-size: 14px;
-    font-weight: normal;
-  }
-
-  &_icon {
-    padding-top: 0px;
-    padding-bottom: 0px;
   }
 
   &__icon {
     font-size: 29px;
     vertical-align: middle;
     margin-right: 20px;
-
-    &_secondary {
-      color: $color-line;
-    }
+    color: $color-line;
   }
 
-  &__icon-text {
+  &__text {
     vertical-align: middle;
   }
 }

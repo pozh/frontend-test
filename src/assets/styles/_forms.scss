@@ -95,6 +95,7 @@ label {
     color: $color-text-dimmed;
   }
   &__btn_action {
+    @include btn-primary;
     padding:18px;
     width:100%;
     @include smartphone {
