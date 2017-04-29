@@ -23,9 +23,14 @@
   margin-left: auto;
   margin-right: auto;
   background: $white;
-  padding: 24px;
+  padding: 20px 24px 28px 24px;
 
-  & + & { margin-top:31px; }
+  & + & {
+    margin-top:11px;
+    @include tablet-up {
+      margin-top:31px;
+    }
+  }
 
   @include tablet-up {
     box-shadow:0 1px 6px rgba(114, 126, 136, .28);
@@ -43,9 +48,6 @@
     @include smartphone {
       border-top: 1px solid $color-line;
       border-bottom: 1px solid $color-line;
-    }
-    @include tablet-up {
-      // padding:46px 41px;
     }
   }
 
