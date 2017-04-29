@@ -2,7 +2,7 @@
 .page_message {
   height:100%;
   @include tablet-up {
-    background: url(../images/fullscreen_bg_image.jpg) no-repeat top center fixed;
+    background: #567683 url(../images/fullscreen_bg_image.jpg) no-repeat top center fixed;
     background-size: cover;
     height: 100%;
     display:flex;

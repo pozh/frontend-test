@@ -165,15 +165,29 @@
   background: $white;
   white-space: nowrap;
   overflow: hidden;
-  padding:0 20px;
   position: relative;
   width:100%;
   box-shadow:0 1px 6px rgba(114,126,136,.28);
 
   @include tablet-up {
-    padding-left:170px + 20px + 27px;
     margin-top:-31px;
   }
+
+  &-container {
+    @include smartphone {
+      padding:0 50px 0 20px;
+      width: 100%;
+      overflow: scroll;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    @include tablet-up {
+      padding: 0 20px 0 170px + 20px + 27px;
+    }
+  }
+
 
   &-item {
     display: inline-block;
@@ -182,6 +196,8 @@
     color: $color-text;
     font-size: 14px;
     text-transform: uppercase;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+
     @include tablet-up {
       padding:24px 0;
     }
@@ -190,13 +206,31 @@
       margin-left:22px;
     }
 
-    &_active,
-    &:hover {
+    &_active {
       border-color: $color-action;
+    }
+    &:hover {
+      @include tablet-up {
+        border-color: $color-action;
+      }
     }
   }
 
   // content fade-out on the right
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 20px;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(255,255,255,1) 0%,
+      rgba(255,255,255,0) 60%);
+  }
+
   &:after {
     content: "";
     display: block;
