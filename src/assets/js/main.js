@@ -106,3 +106,6 @@ let infoLines = [];
 $('#user-info .info__line').map((i, ctrl) => {
   infoLines.push(new InfoCtrl(ctrl));
 });
+
+// Shared header
+$.get("/header.html", (data) => $("#header").replaceWith(data));
